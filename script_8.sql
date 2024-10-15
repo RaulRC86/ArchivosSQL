@@ -1,0 +1,10 @@
+SELECT M.NOMBREM, A.NOMBRES_AL + ' ' + A.APELLIDOP_AL + ' ' + A.APELLIDOM_AL as 'Nombre Estudiante',
+	   P.NOMBRES_PR + ' ' + P.APELLIDOP_PR+' '+P.APELLDOM_PR AS 'Nombre de profesor'
+FROM MODULO M
+	inner join MODULO_ALUMNO MA
+		on M.COD_MODULO = MA.COD_MODULO_FK
+	inner join ALUMNO A
+		on MA.RUT_AL_FK = A.RUT_AL
+	inner join PROFESOR P
+		on M.COD_MODULO = P.COD_MODULO_FK
+WHERE COD_MODULO= 2
